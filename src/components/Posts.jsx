@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
 function Posts() {
+    document.title = 'Post'
     const [posts, setPosts] = useState([]);
 
     const [limit, setLimit] = useState(10);
