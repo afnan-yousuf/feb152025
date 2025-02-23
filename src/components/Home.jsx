@@ -1,7 +1,10 @@
 import React from 'react'
 import { Link, Outlet } from 'react-router-dom'
+import AddTwoNumbers from '../Hooks/AddTwoNumbers'
 
 function Home() {
+
+
   return (
 
         <div className='container'>
@@ -19,14 +22,17 @@ function Home() {
         <Link className="nav-link" to="/about">About</Link>
       </li>
       <li className="nav-item">
-      <Link className="nav-link" to="/posts">Post</Link>
+      <Link className="nav-link" to="/posts">Brands</Link>
+      </li>
+      <li className="nav-item">
+      <Link className="nav-link" to="/addbrand">Add Brands</Link>
       </li>
     </ul>
    
   </div>
 </nav>
         <h1>Slider</h1>
-
+        {AddTwoNumbers()}
         <div className='row'>
             <div className='col-sm-2'>Sidebar</div>
             <div className='col-sm-8'><Outlet /></div>

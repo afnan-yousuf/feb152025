@@ -16,6 +16,7 @@ function App() {
           <Route index element={<h1>Pehla Page</h1>}/>
           <Route path='/posts' element={<Posts/>}/>
           <Route path='/about' element={<About/>}/>
+          <Route path='/addbrand' element={<StudentForm />}/>
           <Route path='*' element={<h1>404 Not Found</h1>}/>
         </Route>
       </Routes>

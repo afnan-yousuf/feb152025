@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { useState } from 'react'
 
 function StudentForm() {
@@ -21,19 +22,31 @@ function StudentForm() {
 
     const handelsubmit = (event) =>{
         event.preventDefault();
-        fetch('url', {
-            method: 'POST',
-            headers: {
-              'Accept': 'application/json',
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({table: "tblbrands", key: 'afnan', data: student})
-          })
-          .then(response => { return response.json()})
-          .then(data => {
-                console.log(data);
-                setStudent({ name: '',  tagline: '', details: '' });
-            })
+      
+        // fetch('url', {
+        //     method: 'POST',
+        //     headers: {
+        //       'Accept': 'application/json',
+        //       'Content-Type': 'application/json'
+        //     },
+        //     body: JSON.stringify({table: "tblbrands", key: 'afnan', data: student})
+        //   })
+        //   .then(response => { return response.json()})
+        //   .then(data => {
+        //         console.log(data);
+        //         setStudent({ name: '',  tagline: '', details: '' });
+        //     })
+
+        axios({
+          method: 'post',
+          url:'https://logicracks.com/api/secondcellmart/demoapi/addbrand.php',
+          data:{
+            name: student.name,
+            tagline: student.tagline,
+            details: student.details
+          }
+        })
+
     }
 
  // console.log(student);
